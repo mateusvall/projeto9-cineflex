@@ -4,13 +4,14 @@ import styled from "styled-components";
 import Name4 from "./Name4";
 import TopBar from "./TopBar";
 
-export default function Sucesso({filme, sessao}){
+export default function Sucesso({filme, sessao, weekday}){
     return(
         <Container>
             <TopBar/>
             <Name4/>
             <h1>Filme e sessão</h1>
             <p>{filme}</p>
+            <p>{weekday}</p>
             <p>{sessao}</p>
             <h1>Ingressos</h1>
             <h1>Comprador</h1>

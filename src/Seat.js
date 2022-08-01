@@ -8,7 +8,7 @@ import Legend from "./Legend";
 import Forms from "./Forms";
 import BottomBar from "./BottomBar";
 
-export default function Seat({assentos, setSessao}){
+export default function Seat({assentos, setSessao, weekday, setWeekday}){
 
     const params = useParams();
     const [seat, setSeat] = useState({})
@@ -20,6 +20,7 @@ export default function Seat({assentos, setSessao}){
         request.then((res) => {
             setSeat(res.data);
             setSessao(res.data.name);
+            setWeekday(res.data.day.weekday);
 
         });
     
@@ -32,7 +33,7 @@ export default function Seat({assentos, setSessao}){
             {seat.seats && <BallList seats={seat.seats} assentos={assentos}/>}
             <Legend/>
             {seat.seats && <Forms assentos={assentos}/>}
-            {seat.seats && <BottomBar image={seat.movie.posterURL} title={seat.movie.title} name={seat.name}/>}
+            {seat.seats && <BottomBar image={seat.movie.posterURL} title={seat.movie.title} name={seat.name} weekday={weekday}/>}
         </React.Fragment>
     )
 }

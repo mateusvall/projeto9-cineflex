@@ -19,9 +19,9 @@ export default function App(){
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Tela1/>}/>
-                <Route path="/filme/:idFilme" element={<Session setFilme={setFilme} setWeekday={setWeekday}/>}/>
-                <Route path="/sessao/:idSessao" element={<Seat assentos={assentos} setSessao={setSessao}/>}/>
-                <Route path="/sucesso" element={<Sucesso filme={filme} sessao={sessao}/>}/>
+                <Route path="/filme/:idFilme" element={<Session setFilme={setFilme}/>}/>
+                <Route path="/sessao/:idSessao" element={<Seat assentos={assentos} setSessao={setSessao} weekday={weekday} setWeekday={setWeekday}/>}/>
+                <Route path="/sucesso" element={<Sucesso filme={filme} sessao={sessao} weekday={weekday}/>}/>
             </Routes>
         </BrowserRouter>
     

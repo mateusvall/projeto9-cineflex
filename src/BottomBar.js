@@ -7,7 +7,8 @@ export default function BottomBar({image,title, weekday, name}){
         <Container>
             <img src={image}/>
             <h1>{title}</h1>
-            <h1>{name}</h1>
+            {weekday}
+            {name}
         </Container>
     )
 }

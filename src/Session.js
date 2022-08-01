@@ -9,16 +9,16 @@ import BottomBar from "./BottomBar";
 
 
 
-export default function Session({setFilme, setWeekday}){
+export default function Session({setFilme}){
     const params = useParams();
     const [session, setSession] = useState({});
-    console.log(session);
 
     useEffect(() => {
         const request = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${params.idFilme}/showtimes`);
 
         request.then((res) => {
             setSession(res.data)
+            setFilme(res.data.title)
         });
     
     },[])
