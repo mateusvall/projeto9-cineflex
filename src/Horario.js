@@ -1,10 +1,15 @@
+import { Link } from "react-router-dom"
 import styled from "styled-components"
 
-export default function Horario({name}){
+export default function Horario({name, sid}){
     return(
-        <Container>
-            <h1>{name}</h1>
-        </Container>
+        
+            <Container>
+                <Link to={`/sessao/${sid}`}>
+                    <h1>{name}</h1>  
+                </Link>
+            </Container>
+       
     )
 }
 
@@ -13,10 +18,8 @@ const Container = styled.div`
     height: 43px;
     background: #E8833A;
     border-radius: 3px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-right: 9px;
+    position: relative;
 
     h1{
         font-family: 'Roboto';
@@ -25,5 +28,12 @@ const Container = styled.div`
         font-size: 18px;
         line-height: 21px;
         color: #FFFFFF;
+        position: absolute;
+        left: 18px;
+        top: 10px;
+    }
+
+    a{
+        text-decoration: none;
     }
 `

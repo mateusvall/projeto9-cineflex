@@ -8,8 +8,6 @@ export default function MovieArea(){
 
     const [movies, setMovies] = useState([])
 
-    console.log(movies);
-
     useEffect(() => {
         const requisicao = axios.get("https://mock-api.driven.com.br/api/v7/cineflex/movies");
 

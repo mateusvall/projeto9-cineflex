@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import Horarios from "./Horarios";
+import TopBar from "./TopBar";
+import Name2 from "./Name2";
+import HorariosArea from "./HorariosArea";
+import BottomBar from "./BottomBar";
+
+
 
 
 export default function Session(){
@@ -22,8 +27,10 @@ export default function Session(){
 
     return (
         <React.Fragment>
-           {/* {session.days.map((item) => <Horarios weekday={item.weekday} date={item.date} showtimes={item.showtimes} />)} */}
-           {session.days.maps((item) => <h1>{item.weekday}</h1>)}
+            <TopBar/>
+            <Name2/>
+           {session.days && <HorariosArea days={session.days}/>}
+           {session.days && <BottomBar image={session.posterURL} name={session.title} />}
         </React.Fragment>
     )
 
