@@ -1,9 +1,12 @@
 import styled from "styled-components"
 
-export default function BottomBar({image,name, session}){
+export default function BottomBar({image,title, weekday, name}){
+    console.log(weekday)
+    console.log(name)
     return(
         <Container>
             <img src={image}/>
+            <h1>{title}</h1>
             <h1>{name}</h1>
         </Container>
     )

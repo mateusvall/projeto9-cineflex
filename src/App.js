@@ -2,16 +2,26 @@ import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Tela1 from "./Tela1"
 import Session from "./Session"
 import Seat from "./Seat"
+import { useState } from "react";
+import Sucesso from "./Sucesso";
 
 
 
 export default function App(){
+
+    const [assentos, setAssentos] = useState([]);
+    const [filme, setFilme] = useState("");
+    const [sessao, setSessao] = useState("");
+    const [weekday, setWeekday] = useState("")
+
+
     return(
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Tela1/>}/>
-                <Route path="/filme/:idFilme" element={<Session/>}/>
-                <Route path="/sessao/:idSessao" element={<Seat/>}/>
+                <Route path="/filme/:idFilme" element={<Session setFilme={setFilme} setWeekday={setWeekday}/>}/>
+                <Route path="/sessao/:idSessao" element={<Seat assentos={assentos} setSessao={setSessao}/>}/>
+                <Route path="/sucesso" element={<Sucesso filme={filme} sessao={sessao}/>}/>
             </Routes>
         </BrowserRouter>
     

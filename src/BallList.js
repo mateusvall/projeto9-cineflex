@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import Ball from "./Ball"
 
-export default function BallList({seats}){
+export default function BallList({seats, assentos}){
     return(
         <Container>
-            {seats.map((item) => <Ball name={item.name} isAvailable={item.isAvailable}/>)}
+            {seats.map((item) => <Ball name={item.name} isAvailable={item.isAvailable} assentos={assentos}/>)}
         </Container>
     )
 }

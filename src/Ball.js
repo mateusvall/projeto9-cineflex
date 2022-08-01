@@ -3,7 +3,7 @@ import styled from "styled-components"
 
 
 
-export default function Ball({name, isAvailable}){
+export default function Ball({name, isAvailable, assentos}){
 
     const [selected, setSelected] = useState(false);
     console.log(selected)

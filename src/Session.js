@@ -9,7 +9,7 @@ import BottomBar from "./BottomBar";
 
 
 
-export default function Session(){
+export default function Session({setFilme, setWeekday}){
     const params = useParams();
     const [session, setSession] = useState({});
     console.log(session);
@@ -18,7 +18,7 @@ export default function Session(){
         const request = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${params.idFilme}/showtimes`);
 
         request.then((res) => {
-            setSession(res.data);
+            setSession(res.data)
         });
     
     },[])
@@ -30,7 +30,7 @@ export default function Session(){
             <TopBar/>
             <Name2/>
            {session.days && <HorariosArea days={session.days}/>}
-           {session.days && <BottomBar image={session.posterURL} name={session.title} />}
+           {session.days && <BottomBar image={session.posterURL} title={session.title}/>}
         </React.Fragment>
     )
 
