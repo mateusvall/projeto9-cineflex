@@ -1,31 +1,19 @@
-import styled from "styled-components"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
-import TopBar from "./TopBar"
-import Name from "./Name"
-import MovieArea from "./MovieArea"
+import Tela1 from "./Tela1"
+import Session from "./Session"
 
 
 
 export default function App(){
     return(
         <BrowserRouter>
-            <Container>
-                <TopBar/>
-                <Name/>
-                <Routes>
-                    <Route path="/" element={<MovieArea/>}/>
-                </Routes>
-            </Container>
+            <Routes>
+                <Route path="/" element={<Tela1/>}/>
+                <Route path="/filme/:idFilme" element={<Session/>}/>
+            </Routes>
         </BrowserRouter>
     
         
     )
 }
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-`
 
